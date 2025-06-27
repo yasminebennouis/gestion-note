@@ -1,0 +1,141 @@
+/* Style général de la fenêtre */
+.root {
+    -fx-font-family: "Segoe UI", sans-serif;
+    -fx-font-size: 14px;
+}
+
+/* Titre principal */
+.title {
+    -fx-font-size: 26px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #0055aa;
+}
+
+/* Boutons principaux */
+.button {
+    -fx-background-color: linear-gradient(to bottom, #007bff, #0056b3);
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 25;
+    -fx-padding: 10 25 10 25;
+    -fx-font-size: 16px;
+    -fx-cursor: hand;
+}
+
+.button:hover {
+    -fx-background-color: linear-gradient(to bottom, #3399ff, #007acc);
+}
+
+/* Boutons secondaires */
+.secondary-button {
+    -fx-background-color: linear-gradient(to bottom, #aaaaaa, #777777);
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 20;
+    -fx-padding: 8 20 8 20;
+    -fx-font-size: 14px;
+}
+
+/* Champs texte */
+.text-field, .password-field, .combo-box {
+    -fx-background-color: white;
+    -fx-background-radius: 12;
+    -fx-border-color: #cccccc;
+    -fx-border-radius: 12;
+    -fx-border-width: 1;
+    -fx-padding: 8 12 8 12;
+    -fx-font-size: 15px;
+}
+
+/* TableView */
+.table-view {
+    -fx-background-color: white;
+    -fx-background-radius: 10;
+    -fx-border-color: #cccccc;
+    -fx-border-radius: 10;
+}
+
+/* TextArea */
+.text-area {
+    -fx-background-color: white;
+    -fx-background-radius: 10;
+    -fx-border-color: #cccccc;
+    -fx-border-radius: 10;
+    -fx-padding: 10;
+}
+
+/* Label d'erreur */
+.label-error {
+    -fx-text-fill: red;
+}
+
+/* Fond du menu principal uniquement */
+.main-menu {
+    -fx-background-image: url("/images/campus.jpeg");
+    -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center center;
+}
+
+/* Petit effet d'ombre pour les boîtes au-dessus de l'image */
+.box-overlay {
+    -fx-background-color: rgba(255, 255, 255, 0.9);
+    -fx-background-radius: 15;
+    -fx-padding: 20;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 15, 0.5, 0, 0);
+}
+/* Statistiques View */
+.stat-box {
+    -fx-background-color: white;
+    -fx-border-color: #dee2e6;
+    -fx-border-radius: 5px;
+    -fx-padding: 15px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 5, 0, 0, 0);
+}
+
+.stat-title {
+    -fx-font-size: 14px;
+    -fx-text-fill: #6c757d;
+}
+
+.stat-value {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #007bff;
+}
+
+.stat-unit {
+    -fx-font-size: 14px;
+    -fx-text-fill: #6c757d;
+}
+
+.chart {
+    -fx-background-color: white;
+    -fx-padding: 15px;
+    -fx-border-color: #dee2e6;
+    -fx-border-radius: 5px;
+}
+
+.axis-label {
+    -fx-font-size: 12px;
+}
+
+.chart-title {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+}
+
+.chart-bar {
+    -fx-bar-fill: #4e73df;
+}
+
+.table-view {
+    -fx-background-color: white;
+    -fx-border-color: #dee2e6;
+    -fx-border-radius: 5px;
+}
+
+.table-view .column-header {
+    -fx-background-color: #f8f9fa;
+    -fx-font-weight: bold;
+}
