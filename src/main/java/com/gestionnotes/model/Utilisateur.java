@@ -4,18 +4,16 @@ public class Utilisateur {
     private int id;
     private String username;
     private String password;
+    private String nom;
+    private String prenom;
     private String nomComplet;
     private String role;
 
-    public Utilisateur() {}
-
-    public Utilisateur(String username, String password, String nomComplet, String role) {
-        this.username = username;
-        this.password = password;
-        this.nomComplet = nomComplet;
-        this.role = role;
+    // Constructeur vide
+    public Utilisateur() {
     }
 
+    // Getters et Setters
     public int getId() {
         return id;
     }
@@ -40,6 +38,22 @@ public class Utilisateur {
         this.password = password;
     }
 
+    public String getNom() {
+        return nom;
+    }
+
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
+
+    public String getPrenom() {
+        return prenom;
+    }
+
+    public void setPrenom(String prenom) {
+        this.prenom = prenom;
+    }
+
     public String getNomComplet() {
         return nomComplet;
     }
@@ -55,10 +69,4 @@ public class Utilisateur {
     public void setRole(String role) {
         this.role = role;
     }
-
-    @Override
-    public String toString() {
-        return nomComplet + " (" + role + ")";
-    }
 }
-

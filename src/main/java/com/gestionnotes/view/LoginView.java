@@ -73,4 +73,3 @@ public class LoginView {
         stage.show();
     }
 }
-

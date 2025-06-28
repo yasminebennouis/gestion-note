@@ -17,18 +17,54 @@ public class SousModule {
     }
 
     // Getters et Setters
-    public int getId() { return id; }
-    public void setId(int id) { this.id = id; }
+    public int getId() {
+        return id;
+    }
 
-    public String getNom() { return nom; }
-    public void setNom(String nom) { this.nom = nom; }
+    public void setId(int id) {
+        this.id = id;
+    }
 
-    public double getCoefficient() { return coefficient; }
-    public void setCoefficient(double coefficient) { this.coefficient = coefficient; }
+    public String getNom() {
+        return nom;
+    }
 
-    public int getModuleId() { return moduleId; }
-    public void setModuleId(int moduleId) { this.moduleId = moduleId; }
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
 
-    public int getEnseignantId() { return enseignantId; }
-    public void setEnseignantId(int enseignantId) { this.enseignantId = enseignantId; }
+    public double getCoefficient() {
+        return coefficient;
+    }
+
+    public void setCoefficient(double coefficient) {
+        this.coefficient = coefficient;
+    }
+
+    public int getModuleId() {
+        return moduleId;
+    }
+
+    public void setModuleId(int moduleId) {
+        this.moduleId = moduleId;
+    }
+
+    public int getEnseignantId() {
+        return enseignantId;
+    }
+
+    public void setEnseignantId(int enseignantId) {
+        this.enseignantId = enseignantId;
+    }
+
+    @Override
+    public String toString() {
+        return "SousModule{" +
+                "id=" + id +
+                ", nom='" + nom + '\'' +
+                ", coefficient=" + coefficient +
+                ", moduleId=" + moduleId +
+                ", enseignantId=" + enseignantId +
+                '}';
+    }
 }

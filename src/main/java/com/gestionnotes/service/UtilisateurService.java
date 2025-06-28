@@ -9,29 +9,33 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class UtilisateurService {
-    private final Connection connection = DatabaseConnection.getInstance().getConnection();
+
+    private final Connection connection;
+
+    public UtilisateurService() {
+        this.connection = DatabaseConnection.getInstance().getConnection();
+    }
 
     public Utilisateur login(String username, String password) {
-        String sql = "SELECT * FROM utilisateurs WHERE username = ? AND password = ?";
-        try (PreparedStatement stmt = connection.prepareStatement(sql)) {
+        String query = "SELECT * FROM utilisateur WHERE username = ? AND password = ?";
+        try (PreparedStatement stmt = connection.prepareStatement(query)) {
             stmt.setString(1, username);
             stmt.setString(2, password);
             ResultSet rs = stmt.executeQuery();
+
             if (rs.next()) {
-                Utilisateur user = new Utilisateur();
-                user.setId(rs.getInt("id"));
-                user.setUsername(rs.getString("username"));
-                user.setPassword(rs.getString("password"));
-
-                String nom = rs.getString("nom");
-                String prenom = rs.getString("prenom");
-                user.setNomComplet(prenom + " " + nom);
-
-                user.setRole(rs.getString("role"));
-                return user;
+                Utilisateur utilisateur = new Utilisateur();
+                utilisateur.setId(rs.getInt("id"));
+                utilisateur.setUsername(rs.getString("username"));
+                utilisateur.setPassword(rs.getString("password"));
+                utilisateur.setRole(rs.getString("role"));
+                utilisateur.setNom(rs.getString("nom"));
+                return utilisateur;
             }
+
         } catch (SQLException e) {
-            throw new RuntimeException("Erreur lors de la connexion", e);
+            e.printStackTrace();
+            throw new RuntimeException("Erreur lors de la connexion");
         }
         return null;
     }

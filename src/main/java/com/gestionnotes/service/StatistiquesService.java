@@ -9,7 +9,6 @@ import java.util.*;
 public class StatistiquesService {
     private final Connection connection = DatabaseConnection.getInstance().getConnection();
 
-    // Moyenne générale par étudiant
     public Map<Integer, Double> calculerMoyennesEtudiants() {
         Map<Integer, Double> moyennes = new HashMap<>();
         String sql = """
@@ -30,7 +29,6 @@ public class StatistiquesService {
         return moyennes;
     }
 
-    // Étudiants en échec
     public List<Integer> getEtudiantsEnEchec() {
         List<Integer> ids = new ArrayList<>();
         for (var entry : calculerMoyennesEtudiants().entrySet()) {
@@ -41,13 +39,11 @@ public class StatistiquesService {
         return ids;
     }
 
-    // Moyenne générale de la classe
     public double moyenneClasse() {
         var moyennes = calculerMoyennesEtudiants().values();
         return moyennes.stream().mapToDouble(Double::doubleValue).average().orElse(0.0);
     }
 
-    // Meilleure note / moyenne
     public double meilleureMoyenne() {
         return calculerMoyennesEtudiants().values().stream()
                 .mapToDouble(Double::doubleValue).max().orElse(0.0);

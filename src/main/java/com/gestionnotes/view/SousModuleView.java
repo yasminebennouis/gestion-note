@@ -78,9 +78,11 @@ public class SousModuleView {
         btnSupprimer.setOnAction(e -> {
             SousModule selected = table.getSelectionModel().getSelectedItem();
             if (selected != null) {
-                controller.supprimer(selected);
+                controller.supprimer(selected.getId());
                 rafraichir(controller, table);
                 showAlert(Alert.AlertType.INFORMATION, "Suppression", "Sous-module supprimé.");
+            } else {
+                showAlert(Alert.AlertType.WARNING, "Attention", "Aucun sous-module sélectionné.");
             }
         });
 

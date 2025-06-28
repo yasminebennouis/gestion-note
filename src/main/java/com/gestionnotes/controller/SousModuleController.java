@@ -13,15 +13,23 @@ public class SousModuleController {
         this.service = service;
     }
 
+    public void ajouter(SousModule sm) {
+        service.ajouter(sm);
+    }
+
+    public void supprimer(int id) {
+        service.supprimer(id);
+    }
+
+    // ✅ Surcharge pour accepter un objet SousModule directement
+    public void supprimer(SousModule sm) {
+        if (sm != null) {
+            service.supprimer(sm.getId());
+        }
+    }
+
     public List<SousModule> getAll() {
-        return service.getTous();
-    }
-
-    public void ajouter(SousModule sousModule) {
-        service.ajouter(sousModule);
-    }
-
-    public void supprimer(SousModule sousModule) {
-        service.supprimer(sousModule.getId());
+        return service.getAll();
     }
 }
+

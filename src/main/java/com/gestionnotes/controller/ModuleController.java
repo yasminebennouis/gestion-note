@@ -25,4 +25,3 @@ public class ModuleController {
         service.supprimerModule(module.getId());
     }
 }
-
